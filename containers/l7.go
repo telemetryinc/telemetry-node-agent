@@ -15,6 +15,9 @@ type L7Metrics struct {
 }
 
 func (m *L7Metrics) observe(status, method string, duration time.Duration) {
+	if m == nil {
+		return
+	}
 	if m.Requests != nil {
 		var err error
 		var c prometheus.Counter
@@ -36,6 +39,29 @@ func (m *L7Metrics) observe(status, method string, duration time.Duration) {
 
 type L7Stats map[l7.Protocol]map[common.DestinationKey]*L7Metrics // protocol -> dst:actual_dst -> metrics
 
+func newL7Metrics(protocol l7.Protocol, requests map[l7.Protocol]prometheus.CounterOpts, latency map[l7.Protocol]prometheus.HistogramOpts, constLabels prometheus.Labels) *L7Metrics {
+	cOpts, ok := requests[protocol]
+	if !ok {
+		return nil
+	}
+	m := &L7Metrics{}
+	labels := []string{"status"}
+	switch protocol {
+	case l7.ProtocolRabbitmq, l7.ProtocolNats:
+		labels = append(labels, "method")
+	default:
+		if hOpts, ok := latency[protocol]; ok {
+			m.Latency = prometheus.NewHistogram(
+				prometheus.HistogramOpts{Name: hOpts.Name, Help: hOpts.Help, ConstLabels: constLabels},
+			)
+		}
+	}
+	m.Requests = prometheus.NewCounterVec(
+		prometheus.CounterOpts{Name: cOpts.Name, Help: cOpts.Help, ConstLabels: constLabels}, labels,
+	)
+	return m
+}
+
 func (s L7Stats) get(protocol l7.Protocol, key common.DestinationKey) *L7Metrics {
 	if protocol == l7.ProtocolHTTP2 {
 		protocol = l7.ProtocolHTTP
@@ -47,23 +73,11 @@ func (s L7Stats) get(protocol l7.Protocol, key common.DestinationKey) *L7Metrics
 	}
 	m := protoStats[key]
 	if m == nil {
-		m = &L7Metrics{}
-		protoStats[key] = m
-		constLabels := map[string]string{"destination": key.DestinationLabelValue(), "actual_destination": key.ActualDestinationLabelValue()}
-		labels := []string{"status"}
-		switch protocol {
-		case l7.ProtocolRabbitmq, l7.ProtocolNats:
-			labels = append(labels, "method")
-		default:
-			hOpts := L7Latency[protocol]
-			m.Latency = prometheus.NewHistogram(
-				prometheus.HistogramOpts{Name: hOpts.Name, Help: hOpts.Help, ConstLabels: constLabels},
-			)
+		constLabels := prometheus.Labels{"destination": key.DestinationLabelValue(), "actual_destination": key.ActualDestinationLabelValue()}
+		if m = newL7Metrics(protocol, L7Requests, L7Latency, constLabels); m == nil {
+			return nil
 		}
-		cOpts := L7Requests[protocol]
-		m.Requests = prometheus.NewCounterVec(
-			prometheus.CounterOpts{Name: cOpts.Name, Help: cOpts.Help, ConstLabels: constLabels}, labels,
-		)
+		protoStats[key] = m
 	}
 	return m
 }
@@ -98,21 +112,12 @@ func (s L7InboundStats) get(protocol l7.Protocol) *L7Metrics {
 		protocol = l7.ProtocolHTTP
 	}
 	m := s[protocol]
-	if m != nil {
-		return m
+	if m == nil {
+		if m = newL7Metrics(protocol, L7InboundRequests, L7InboundLatency, nil); m == nil {
+			return nil
+		}
+		s[protocol] = m
 	}
-	m = &L7Metrics{}
-	s[protocol] = m
-	labels := []string{"status"}
-	switch protocol {
-	case l7.ProtocolRabbitmq, l7.ProtocolNats:
-		labels = append(labels, "method")
-	default:
-		hOpts := L7InboundLatency[protocol]
-		m.Latency = prometheus.NewHistogram(prometheus.HistogramOpts{Name: hOpts.Name, Help: hOpts.Help})
-	}
-	cOpts := L7InboundRequests[protocol]
-	m.Requests = prometheus.NewCounterVec(prometheus.CounterOpts{Name: cOpts.Name, Help: cOpts.Help}, labels)
 	return m
 }
 
