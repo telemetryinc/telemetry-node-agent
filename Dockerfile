@@ -16,20 +16,21 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 ARG VERSION=unknown
-RUN CGO_ENABLED=1 go build -mod=readonly -ldflags "-extldflags='-Wl,-z,lazy' -X 'github.com/coroot/coroot-node-agent/flags.Version=${VERSION}'" -o coroot-node-agent .
+RUN CGO_ENABLED=1 go build -mod=readonly -ldflags "-extldflags='-Wl,-z,lazy' -X 'github.com/telemetryinc/telemetry-node-agent/flags.Version=${VERSION}'" -o telemetry-node-agent .
 
 FROM registry.access.redhat.com/ubi9/ubi
 
 ARG VERSION=unknown
-LABEL name="coroot-node-agent" \
-      vendor="Coroot, Inc." \
-      maintainer="Coroot, Inc." \
+LABEL name="telemetry-node-agent" \
+      vendor="Telemetry Inc." \
+      maintainer="Telemetry Inc." \
       version=${VERSION} \
       release="1" \
-      summary="Coroot Node Agent." \
-      description="Coroot Node Agent container image."
+      summary="Telemetry Node Agent." \
+      description="Telemetry Node Agent container image."
 
 COPY LICENSE /licenses/LICENSE
+COPY NOTICE.md /licenses/NOTICE.md
 
-COPY --from=builder /tmp/src/coroot-node-agent /usr/bin/coroot-node-agent
-ENTRYPOINT ["coroot-node-agent"]
+COPY --from=builder /tmp/src/telemetry-node-agent /usr/bin/telemetry-node-agent
+ENTRYPOINT ["telemetry-node-agent"]

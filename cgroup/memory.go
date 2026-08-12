@@ -3,7 +3,7 @@ package cgroup
 import (
 	"path"
 
-	"github.com/coroot/coroot-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/common"
 )
 
 const maxMemory = 1 << 62

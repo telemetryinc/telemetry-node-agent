@@ -1,4 +1,4 @@
-package io.coroot.agent;
+package io.telemetryinc.agent;
 
 public class NativeBridge {
     public static synchronized boolean load(String path) {
@@ -7,7 +7,7 @@ public class NativeBridge {
             return true;
         } catch (UnsatisfiedLinkError e) {
             if (e.getMessage() != null && e.getMessage().contains("already loaded")) return true;
-            System.err.println("[coroot] native load failed: " + e.getMessage());
+            System.err.println("[telemetry] native load failed: " + e.getMessage());
             return false;
         }
     }

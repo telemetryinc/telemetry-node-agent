@@ -4,11 +4,11 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/flags"
-	"github.com/coroot/coroot-node-agent/hsperf"
-	"github.com/coroot/coroot-node-agent/metrics"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/hsperf"
+	"github.com/telemetryinc/telemetry-node-agent/metrics"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/klog/v2"
 )

@@ -7,19 +7,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/apptype"
-	"github.com/coroot/coroot-node-agent/cgroup"
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/ebpftracer"
-	"github.com/coroot/coroot-node-agent/ebpftracer/l7"
-	"github.com/coroot/coroot-node-agent/flags"
-	"github.com/coroot/coroot-node-agent/jvm"
-	"github.com/coroot/coroot-node-agent/logs"
-	"github.com/coroot/coroot-node-agent/metrics"
-	"github.com/coroot/coroot-node-agent/node"
-	"github.com/coroot/coroot-node-agent/pinger"
-	"github.com/coroot/coroot-node-agent/proc"
-	"github.com/coroot/coroot-node-agent/tracing"
+	"github.com/telemetryinc/telemetry-node-agent/apptype"
+	"github.com/telemetryinc/telemetry-node-agent/cgroup"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer/l7"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/jvm"
+	"github.com/telemetryinc/telemetry-node-agent/logs"
+	"github.com/telemetryinc/telemetry-node-agent/metrics"
+	"github.com/telemetryinc/telemetry-node-agent/node"
+	"github.com/telemetryinc/telemetry-node-agent/pinger"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/tracing"
 	"github.com/coroot/logparser"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/vishvananda/netns"
@@ -1237,7 +1237,7 @@ func (c *Container) runLogParser(logPath string) {
 
 	for _, p := range c.processes {
 		if p.Flags.LogMonitoringDisabled {
-			klog.InfoS("skipping log monitoring due to COROOT_LOG_MONITORING=disabled", "cg", c.cgroup.Id)
+			klog.InfoS("skipping log monitoring due to TELEMETRY_LOG_MONITORING=disabled", "cg", c.cgroup.Id)
 			return
 		}
 	}

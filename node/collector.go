@@ -1,8 +1,8 @@
 package node
 
 import (
-	"github.com/coroot/coroot-node-agent/metrics"
-	"github.com/coroot/coroot-node-agent/node/metadata"
+	"github.com/telemetryinc/telemetry-node-agent/metrics"
+	"github.com/telemetryinc/telemetry-node-agent/node/metadata"
 	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/klog/v2"
 )

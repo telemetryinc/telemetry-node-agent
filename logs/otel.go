@@ -12,8 +12,8 @@ import (
 	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/otlplogshttp"
 	otelLogs "github.com/agoda-com/opentelemetry-logs-go/logs"
 	sdk "github.com/agoda-com/opentelemetry-logs-go/sdk/logs"
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"github.com/coroot/logparser"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/sdk/resource"
@@ -74,14 +74,14 @@ func Init(cfg Config, machineId, hostname, version string) {
 		sdk.WithResource(
 			resource.NewWithAttributes(
 				semconv.SchemaURL,
-				semconv.ServiceName("coroot-node-agent"),
+				semconv.ServiceName("telemetry-node-agent"),
 				semconv.HostName(hostname),
 				semconv.HostID(machineId),
 			),
 		),
 	)
 	otel.SetLoggerProvider(loggerProvider)
-	otelLogger = loggerProvider.Logger("coroot-node-agent", otelLogs.WithInstrumentationVersion(version))
+	otelLogger = loggerProvider.Logger("telemetry-node-agent", otelLogs.WithInstrumentationVersion(version))
 }
 
 func Shutdown(ctx context.Context) {

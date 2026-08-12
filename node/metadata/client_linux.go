@@ -7,7 +7,7 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 

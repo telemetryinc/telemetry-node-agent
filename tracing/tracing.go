@@ -6,10 +6,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/api"
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/ebpftracer/l7"
-	"github.com/coroot/coroot-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/api"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer/l7"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
@@ -104,7 +104,7 @@ func GetContainerTracer(containerId string) *Tracer {
 			)...,
 		)),
 	)
-	return &Tracer{otel: provider.Tracer("coroot-node-agent", trace.WithInstrumentationVersion(agentVersion))}
+	return &Tracer{otel: provider.Tracer("telemetry-node-agent", trace.WithInstrumentationVersion(agentVersion))}
 }
 
 func (t *Tracer) NewTrace(destination common.HostPort) *Trace {

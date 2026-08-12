@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/vishvananda/netns"
 	"golang.org/x/net/icmp"
 	"golang.org/x/net/ipv4"

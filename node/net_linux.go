@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/vishvananda/netlink"
 	"golang.org/x/sys/unix"
 	"inet.af/netaddr"

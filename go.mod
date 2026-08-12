@@ -1,4 +1,4 @@
-module github.com/coroot/coroot-node-agent
+module github.com/telemetryinc/telemetry-node-agent
 
 go 1.24.7
 

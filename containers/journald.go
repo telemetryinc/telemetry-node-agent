@@ -3,8 +3,8 @@ package containers
 import (
 	"fmt"
 
-	"github.com/coroot/coroot-node-agent/logs"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/logs"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/coroot/logparser"
 )
 

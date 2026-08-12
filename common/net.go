@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"github.com/gobwas/glob"
 	"inet.af/netaddr"
 	"k8s.io/klog/v2"

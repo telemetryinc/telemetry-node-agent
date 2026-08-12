@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/coroot/logparser"
 	"github.com/moby/moby/api/types/network"
 	"github.com/moby/moby/client"

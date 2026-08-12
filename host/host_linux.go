@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 

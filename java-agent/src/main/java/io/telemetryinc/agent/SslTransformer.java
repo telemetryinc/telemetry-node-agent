@@ -1,4 +1,4 @@
-package io.coroot.agent;
+package io.telemetryinc.agent;
 
 import org.objectweb.asm.*;
 import java.lang.instrument.ClassFileTransformer;
@@ -62,7 +62,7 @@ public class SslTransformer implements ClassFileTransformer {
                     mv.visitVarInsn(Opcodes.ALOAD, 1);
                     mv.visitVarInsn(Opcodes.ILOAD, 2);
                     mv.visitVarInsn(Opcodes.ILOAD, 3);
-                    mv.visitMethodInsn(Opcodes.INVOKESTATIC, "io/coroot/agent/NativeBridge", "tlsWriteEnter", "([BII)V", false);
+                    mv.visitMethodInsn(Opcodes.INVOKESTATIC, "io/telemetryinc/agent/NativeBridge", "tlsWriteEnter", "([BII)V", false);
                     mv.visitLabel(tryEnd);
                     mv.visitJumpInsn(Opcodes.GOTO, done);
                     mv.visitLabel(handler);
@@ -94,7 +94,7 @@ public class SslTransformer implements ClassFileTransformer {
                         mv.visitVarInsn(Opcodes.ALOAD, 1);
                         mv.visitVarInsn(Opcodes.ILOAD, 2);
                         mv.visitVarInsn(Opcodes.ILOAD, 4);
-                        mv.visitMethodInsn(Opcodes.INVOKESTATIC, "io/coroot/agent/NativeBridge", "tlsReadExit", "([BII)V", false);
+                        mv.visitMethodInsn(Opcodes.INVOKESTATIC, "io/telemetryinc/agent/NativeBridge", "tlsReadExit", "([BII)V", false);
                         mv.visitLabel(skip);
                         mv.visitLabel(tryEnd);
                         mv.visitJumpInsn(Opcodes.GOTO, done);

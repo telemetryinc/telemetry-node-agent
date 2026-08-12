@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.coroot</groupId>
-    <artifactId>coroot-java-tls-agent</artifactId>
+    <groupId>io.telemetryinc</groupId>
+    <artifactId>telemetry-java-tls-agent</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
@@ -36,17 +36,17 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.objectweb.asm</pattern>
-                                    <shadedPattern>io.coroot.agent.shaded.asm</shadedPattern>
+                                    <shadedPattern>io.telemetryinc.agent.shaded.asm</shadedPattern>
                                 </relocation>
                             </relocations>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
-                                        <Premain-Class>io.coroot.agent.TlsAgent</Premain-Class>
-                                        <Agent-Class>io.coroot.agent.TlsAgent</Agent-Class>
+                                        <Premain-Class>io.telemetryinc.agent.TlsAgent</Premain-Class>
+                                        <Agent-Class>io.telemetryinc.agent.TlsAgent</Agent-Class>
                                         <Can-Retransform-Classes>true</Can-Retransform-Classes>
                                         <Can-Redefine-Classes>true</Can-Redefine-Classes>
-                                        <Boot-Class-Path>coroot-java-tls-agent.jar</Boot-Class-Path>
+                                        <Boot-Class-Path>telemetry-java-tls-agent.jar</Boot-Class-Path>
                                     </manifestEntries>
                                 </transformer>
                             </transformers>

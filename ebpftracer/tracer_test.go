@@ -15,7 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/common"
 
 	"github.com/containerd/cgroups"
 	cgroupsV2 "github.com/containerd/cgroups/v2"

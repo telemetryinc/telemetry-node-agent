@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 )
 
 const (

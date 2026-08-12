@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/cilium/ebpf/link"
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 
@@ -283,8 +283,8 @@ func (t *Tracer) AttachJavaTlsUprobes(pid uint32, nativeLibPath string) *UprobeK
 		defer ef.Close()
 
 		links := t.attachUprobes(nativeLibPath, ef, []uprobeSpec{
-			{symbol: "coroot_java_tls_write_enter", uprobe: "java_tls_write_enter"},
-			{symbol: "coroot_java_tls_read_exit", uprobe: "java_tls_read_exit"},
+			{symbol: "telemetry_java_tls_write_enter", uprobe: "java_tls_write_enter"},
+			{symbol: "telemetry_java_tls_read_exit", uprobe: "java_tls_read_exit"},
 		}, log)
 		if len(links) > 0 {
 			log("java TLS uprobes attached (global)", nil)

@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to Coroot!
+Thank you for your interest in contributing to Telemetry!
 Below are some basic guidelines.
 
 

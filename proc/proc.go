@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/cgroup"
+	"github.com/telemetryinc/telemetry-node-agent/cgroup"
 )
 
 var root = "/proc"

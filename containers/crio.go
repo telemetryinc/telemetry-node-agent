@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/coroot/logparser"
 	"k8s.io/klog/v2"
 )

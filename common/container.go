@@ -3,7 +3,7 @@ package common
 import (
 	"regexp"
 
-	"github.com/coroot/coroot-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"k8s.io/klog/v2"
 )
 

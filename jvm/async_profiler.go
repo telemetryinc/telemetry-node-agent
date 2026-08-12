@@ -8,12 +8,12 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 
 const (
-	apDeployDir = "/tmp/coroot"
+	apDeployDir = "/tmp/telemetry"
 	apLibName   = "libasyncProfiler.so"
 )
 

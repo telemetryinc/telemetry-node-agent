@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/jpillora/backoff"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/pyroscope-io/dotnetdiag"

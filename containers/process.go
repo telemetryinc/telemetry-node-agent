@@ -7,12 +7,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/apptype"
-	"github.com/coroot/coroot-node-agent/ebpftracer"
-	"github.com/coroot/coroot-node-agent/ebpftracer/l7"
-	"github.com/coroot/coroot-node-agent/flags"
-	"github.com/coroot/coroot-node-agent/gpu"
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/apptype"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer/l7"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/gpu"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/jpillora/backoff"
 	"github.com/mdlayher/taskstats"
 )

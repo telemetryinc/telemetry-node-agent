@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/common"
-	"github.com/coroot/coroot-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"k8s.io/klog/v2"
 )
 

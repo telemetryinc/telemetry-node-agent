@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: coroot
+  name: telemetry
 
 ---
 
@@ -9,17 +9,17 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
-    app: coroot-node-agent
-  name: coroot-node-agent
-  namespace: coroot
+    app: telemetry-node-agent
+  name: telemetry-node-agent
+  namespace: telemetry
 spec:
   selector:
     matchLabels:
-      app: coroot-node-agent
+      app: telemetry-node-agent
   template:
     metadata:
       labels:
-        app: coroot-node-agent
+        app: telemetry-node-agent
       annotations:
         prometheus.io/scrape: 'true'
         prometheus.io/port: '80'
@@ -28,8 +28,8 @@ spec:
         - operator: Exists
       hostPID: true
       containers:
-        - name: coroot-node-agent
-          image: ghcr.io/coroot/coroot-node-agent
+        - name: telemetry-node-agent
+          image: ghcr.io/telemetryinc/telemetry-node-agent
           args: ["--cgroupfs-root", "/host/sys/fs/cgroup"]
           ports:
             - containerPort: 80

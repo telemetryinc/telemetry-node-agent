@@ -8,7 +8,7 @@ import (
 
 const (
 	defaultListenAddress = "0.0.0.0:80"
-	defaultWalDir        = "/tmp/coroot-node-agent"
+	defaultWalDir        = "/tmp/telemetry-node-agent"
 	envarPrefix          = ""
 )
 

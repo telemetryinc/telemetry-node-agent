@@ -29,15 +29,15 @@ func GetFlags(pid uint32) (Flags, error) {
 		if len(kv) != 2 {
 			continue
 		}
-		if !strings.HasPrefix(kv[0], "COROOT_") {
+		if !strings.HasPrefix(kv[0], "TELEMETRY_") {
 			continue
 		}
 		switch kv[0] {
-		case "COROOT_EBPF_PROFILING":
+		case "TELEMETRY_EBPF_PROFILING":
 			flags.EbpfProfilingDisabled = strings.Contains(kv[1], "disabled")
-		case "COROOT_LOG_MONITORING":
+		case "TELEMETRY_LOG_MONITORING":
 			flags.LogMonitoringDisabled = strings.Contains(kv[1], "disabled")
-		case "COROOT_EBPF_TRACES":
+		case "TELEMETRY_EBPF_TRACES":
 			flags.EbpfTracesDisabled = strings.Contains(kv[1], "disabled")
 		}
 	}

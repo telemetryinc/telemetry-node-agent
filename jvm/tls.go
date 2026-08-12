@@ -10,14 +10,14 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/proc"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 
 const (
-	deployDir     = "/tmp/coroot"
-	nativeLibName = "libcoroot_java_tls.so"
-	agentJarName  = "coroot-java-tls-agent.jar"
+	deployDir     = "/tmp/telemetry"
+	nativeLibName = "libtelemetry_java_tls.so"
+	agentJarName  = "telemetry-java-tls-agent.jar"
 )
 
 //go:embed assets/*
@@ -25,9 +25,9 @@ var agentAssets embed.FS
 
 func nativeLibAssetName() string {
 	if runtime.GOARCH == "amd64" {
-		return "libcoroot_java_tls_amd64.so"
+		return "libtelemetry_java_tls_amd64.so"
 	}
-	return "libcoroot_java_tls_arm64.so"
+	return "libtelemetry_java_tls_arm64.so"
 }
 
 func deployAndLoadTlsAgent(pid uint32) (nativeLibPath string, err error) {
@@ -89,7 +89,7 @@ func getLoadedNativeLibPath(pid uint32) string {
 			continue
 		}
 		libPath := parts[5]
-		if strings.Contains(libPath, "libcoroot_java_tls.so") {
+		if strings.Contains(libPath, "libtelemetry_java_tls.so") {
 			fullPath := proc.Path(pid, "root", libPath)
 			if _, err = os.Stat(fullPath); err == nil {
 				return fullPath

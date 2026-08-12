@@ -1,4 +1,4 @@
-package io.coroot.agent;
+package io.telemetryinc.agent;
 
 import java.lang.instrument.Instrumentation;
 
@@ -16,7 +16,7 @@ public class TlsAgent {
     private static synchronized void initialize(String nativeLibPath, Instrumentation inst) {
         if (initialized) return;
 
-        System.out.println("[coroot] Initializing Java TLS agent");
+        System.out.println("[telemetry] Initializing Java TLS agent");
 
         if (nativeLibPath == null || nativeLibPath.isEmpty()) return;
         if (!NativeBridge.load(nativeLibPath)) return;
@@ -29,10 +29,10 @@ public class TlsAgent {
                 }
             }
         } catch (Exception e) {
-            System.err.println("[coroot] retransform failed: " + e.getMessage());
+            System.err.println("[telemetry] retransform failed: " + e.getMessage());
         }
 
         initialized = true;
-        System.out.println("[coroot] Java TLS agent initialized successfully");
+        System.out.println("[telemetry] Java TLS agent initialized successfully");
     }
 }

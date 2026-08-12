@@ -36,7 +36,7 @@ type Config struct {
 	MaxSpoolSize   int64
 }
 
-const jobName = "coroot-node-agent"
+const jobName = "telemetry-node-agent"
 
 type Agent struct {
 	reg    *prometheus.Registry

@@ -40,7 +40,7 @@ var (
 	MaxLabelLength            = kingpin.Flag("max-label-length", "Maximum length of a metric label value").Default("4096").Envar(envar("MAX_LABEL_LENGTH")).Int()
 
 	CollectorEndpoint  = kingpin.Flag("collector-endpoint", "A base endpoint URL for metrics, traces, logs, and profiles").Envar(envar("COLLECTOR_ENDPOINT")).URL()
-	ApiKey             = kingpin.Flag("api-key", "Coroot API key").Envar(envar("API_KEY")).String()
+	ApiKey             = kingpin.Flag("api-key", "Telemetry API key").Envar(envar("API_KEY")).String()
 	MetricsEndpoint    = kingpin.Flag("metrics-endpoint", "The URL of the endpoint to send metrics to").Envar(envar("METRICS_ENDPOINT")).URL()
 	LogsEndpoint       = kingpin.Flag("logs-endpoint", "The URL of the endpoint to send logs to").Envar(envar("LOGS_ENDPOINT")).URL()
 	InsecureSkipVerify = kingpin.Flag("insecure-skip-verify", "whether to skip verifying the certificate or not").Envar(envar("INSECURE_SKIP_VERIFY")).Default("false").Bool()

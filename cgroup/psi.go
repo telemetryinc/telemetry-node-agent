@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/common"
 	"k8s.io/klog/v2"
 )
 

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coroot/coroot-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/common"
 )
 
 type CPUStat struct {

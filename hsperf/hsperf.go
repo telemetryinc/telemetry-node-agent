@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/coroot/coroot-node-agent/metrics"
+	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/xin053/hsperfdata"
 )
