@@ -11,6 +11,8 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/telemetryinc/telemetry-node-agent/api"
 	"github.com/telemetryinc/telemetry-node-agent/common"
 	"github.com/telemetryinc/telemetry-node-agent/containers"
@@ -23,8 +25,6 @@ import (
 	"github.com/telemetryinc/telemetry-node-agent/profiling"
 	"github.com/telemetryinc/telemetry-node-agent/prom"
 	"github.com/telemetryinc/telemetry-node-agent/tracing"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/sys/unix"
 	"golang.org/x/time/rate"
 	"k8s.io/klog/v2"

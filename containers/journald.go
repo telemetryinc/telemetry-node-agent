@@ -3,9 +3,9 @@ package containers
 import (
 	"fmt"
 
+	"github.com/coroot/logparser"
 	"github.com/telemetryinc/telemetry-node-agent/logs"
 	"github.com/telemetryinc/telemetry-node-agent/proc"
-	"github.com/coroot/logparser"
 )
 
 var (

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"github.com/gobwas/glob"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"inet.af/netaddr"
 	"k8s.io/klog/v2"
 )

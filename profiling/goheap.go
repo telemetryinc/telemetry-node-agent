@@ -6,10 +6,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/telemetryinc/telemetry-node-agent/ebpftracer"
-	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/google/pprof/profile"
 	"github.com/grafana/pyroscope/ebpf/symtab"
+	"github.com/telemetryinc/telemetry-node-agent/ebpftracer"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 

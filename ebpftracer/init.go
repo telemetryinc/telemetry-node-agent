@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/cilium/ebpf"
-	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/florianl/go-conntrack"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/vishvananda/netns"
 	"inet.af/netaddr"
 	"k8s.io/klog/v2"

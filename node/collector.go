@@ -1,9 +1,9 @@
 package node
 
 import (
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/telemetryinc/telemetry-node-agent/node/metadata"
-	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/klog/v2"
 )
 

@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/cilium/ebpf"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/telemetryinc/telemetry-node-agent/cgroup"
 	"github.com/telemetryinc/telemetry-node-agent/common"
 	"github.com/telemetryinc/telemetry-node-agent/ebpftracer"
@@ -19,7 +20,6 @@ import (
 	"github.com/telemetryinc/telemetry-node-agent/gpu"
 	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/telemetryinc/telemetry-node-agent/proc"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/vishvananda/netns"
 	"inet.af/netaddr"
 	"k8s.io/klog/v2"

@@ -7,6 +7,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/coroot/logparser"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/telemetryinc/telemetry-node-agent/apptype"
 	"github.com/telemetryinc/telemetry-node-agent/cgroup"
 	"github.com/telemetryinc/telemetry-node-agent/common"
@@ -20,8 +22,6 @@ import (
 	"github.com/telemetryinc/telemetry-node-agent/pinger"
 	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/telemetryinc/telemetry-node-agent/tracing"
-	"github.com/coroot/logparser"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/vishvananda/netns"
 	"golang.org/x/exp/maps"
 	"inet.af/netaddr"

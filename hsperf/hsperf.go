@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/xin053/hsperfdata"
 )
 

@@ -9,12 +9,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/telemetryinc/telemetry-node-agent/api"
-	"github.com/telemetryinc/telemetry-node-agent/common"
-	"github.com/telemetryinc/telemetry-node-agent/containers"
-	"github.com/telemetryinc/telemetry-node-agent/flags"
-	"github.com/telemetryinc/telemetry-node-agent/jvm"
-	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/go-kit/log"
 	pprofProfile "github.com/google/pprof/profile"
 	ebpfspy "github.com/grafana/pyroscope/ebpf"
@@ -25,6 +19,12 @@ import (
 	"github.com/grafana/pyroscope/ebpf/symtab"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/prometheus/model/labels"
+	"github.com/telemetryinc/telemetry-node-agent/api"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/containers"
+	"github.com/telemetryinc/telemetry-node-agent/flags"
+	"github.com/telemetryinc/telemetry-node-agent/jvm"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 

@@ -12,10 +12,10 @@ import (
 	"time"
 
 	"github.com/NVIDIA/go-nvml/pkg/nvml"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/telemetryinc/telemetry-node-agent/flags"
 	"github.com/telemetryinc/telemetry-node-agent/metrics"
 	"github.com/telemetryinc/telemetry-node-agent/proc"
-	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/klog/v2"
 )
 

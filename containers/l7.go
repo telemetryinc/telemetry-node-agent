@@ -3,9 +3,9 @@ package containers
 import (
 	"time"
 
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/telemetryinc/telemetry-node-agent/common"
 	"github.com/telemetryinc/telemetry-node-agent/ebpftracer/l7"
-	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/klog/v2"
 )
 

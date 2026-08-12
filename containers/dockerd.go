@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/telemetryinc/telemetry-node-agent/common"
-	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/coroot/logparser"
 	"github.com/moby/moby/api/types/network"
 	"github.com/moby/moby/client"
+	"github.com/telemetryinc/telemetry-node-agent/common"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"inet.af/netaddr"
 )
 

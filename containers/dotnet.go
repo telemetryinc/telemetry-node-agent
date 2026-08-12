@@ -12,12 +12,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"github.com/jpillora/backoff"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/pyroscope-io/dotnetdiag"
 	"github.com/pyroscope-io/dotnetdiag/nettrace"
 	"github.com/pyroscope-io/dotnetdiag/nettrace/typecode"
+	"github.com/telemetryinc/telemetry-node-agent/proc"
 	"k8s.io/klog/v2"
 )
 
